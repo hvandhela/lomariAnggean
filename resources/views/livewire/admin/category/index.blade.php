@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h6>Are u sure you want to delete this data?</h6>
+                <h6>Are you sure you want to delete this data?</h6>
             </div>
             <form wire:submit.prevent="destroyCategory">
                 <div class="modal-footer">
