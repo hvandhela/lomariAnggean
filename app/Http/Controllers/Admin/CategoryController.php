@@ -27,4 +27,20 @@ class CategoryController extends Controller
         $category->save();
         return redirect('admin/category')->with('message','Category Added Successfully');
     }
+
+    public function edit(Category $category)
+    {
+        return view('admin.category.edit', compact('category'));
+    }
+
+    public function update(CategoryFormRequest $request, $category)
+    {
+        $validatedData = $request->validated();
+        $category = Category::findOrFail($category);
+
+        $category->name = $validatedData['name'];
+
+        $category->update();
+        return redirect('admin/category')->with('message','Category Updated Successfully');
+    }
 }
